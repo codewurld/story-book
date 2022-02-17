@@ -7,7 +7,9 @@ const router = express.Router()
 // @route GET /
 router.get('/', (req, res) => {
     // looks for templates called dashboard in views folder
-    res.render('login')
+    // layout uses login layout from layouts/login
+    res.render('login',
+        { layout: 'login' })
 })
 
 // @desc Dashboard
