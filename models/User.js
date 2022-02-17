@@ -26,5 +26,6 @@ const UserSchema = new mongoose.Schema({
     }
 })
 
+// connect model to User Schema schema
 module.exports = mongoose.model('User', UserSchema);
 
