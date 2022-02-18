@@ -6,7 +6,7 @@ const exphbs = require('express-handlebars');
 const passport = require('passport');
 const session = require('express-session');
 const connectDB = require('./config/db');
-const PORT = process.env.PORT || 8083
+const PORT = process.env.PORT || 8084
 
 // load config
 dotenv.config({ path: './config/config.env' });

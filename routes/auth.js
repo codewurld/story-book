@@ -12,12 +12,16 @@ router.get('/google', passport.authenticate('google', { scope: ['profile'] }))
 // @desc Google auth Callback
 // @route GET /auth/google/callback
 // redirects failure to route
-router.get('/auth/google/callback',
+router.get('/google/callback',
     passport.authenticate('google', { failureRedirect: '/' }),
     (req, res) => {
         // Successful authentication, redirect dashboard.
         res.redirect('/dashboard');
     });
 
+// router.get('/oauth2/redirect/google',
+//     passport.authenticate('google', { failureRedirect: '/login', failureMessage: true }),
+//     function (req, res) {
+//     });
 
 module.exports = router
