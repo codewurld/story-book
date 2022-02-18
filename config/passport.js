@@ -31,12 +31,25 @@ module.exports = function (passport) {
                 // creates user in DB if user don't already exist
                 else {
                     user = await User.create(newUser);
-                    done(null, user)
+                    callback(null, user)
                 }
             } catch (err) {
                 console.error(err)
             }
 
         }
+
+
     ));
+
+    passport.serializeUser(function (user, done) {
+        done(null, user.id);
+    });
+
+    passport.deserializeUser(function (id, done) {
+        User.findById(id, function (err, user) {
+            done(err, user);
+        });
+    })
+
 }
