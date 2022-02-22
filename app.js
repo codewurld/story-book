@@ -1,11 +1,14 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 const path = require('path')
 const exphbs = require('express-handlebars');
 const passport = require('passport');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const connectDB = require('./config/db');
+
 const PORT = process.env.PORT || 8084
 
 // load config
@@ -34,7 +37,8 @@ app.use(session({
     resave: false,
     // don't create a session until an item is stored
     saveUninitialized: false,
-    // stores session in DB
+    // stores session in DB and prevents push out
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI })
 }))
 
 
