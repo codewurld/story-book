@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === 'development') {
 };
 
 // Handlebars Helpers
-const { formatDate } = require('./helpers/hbs');
+const { formatDate, truncate, stripTags } = require('./helpers/hbs');
 
 // handlebars view engine
 app.engine('.hbs', exphbs.engine({
