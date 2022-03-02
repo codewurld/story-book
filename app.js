@@ -15,10 +15,10 @@ const PORT = process.env.PORT || 8084
 // load config
 dotenv.config({ path: './config/config.env' });
 
-// passport config (passport) <- so we can use in file 
+
 require('./config/passport')(passport)
 
-// connect app to DB
+
 connectDB();
 
 const app = express();

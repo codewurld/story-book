@@ -33,7 +33,7 @@ router.get('/', ensureAuth, async (req, res) => {
     try {
         const stories = await Story.find({ status: 'public' })
             .populate('user')
-            .sort({ createdAy: 'desc' })
+            .sort({ createdAt: 'desc' })
             .lean()
 
 
