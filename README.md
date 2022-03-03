@@ -20,4 +20,4 @@ Also built this app with the secondary purpose of improving my skills and learni
 - Passportjs
 - Nodemon
 
-Special Shoutout to: Brad Traversy
+Special Shoutout to: B.T
